@@ -1,0 +1,263 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-01-08 10:30:10.368871",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_djd3",
+  "from_industry",
+  "from_address",
+  "from_gstinuin",
+  "from_state",
+  "from__code",
+  "cin",
+  "from_email",
+  "column_break_um7g",
+  "to_induustry",
+  "to_address",
+  "pin",
+  "to_gstinuin",
+  "to_state",
+  "to_code",
+  "section_break_0iyt",
+  "vocher_no",
+  "dated",
+  "modeterms_of_payment",
+  "terms_of_delivery",
+  "other_references",
+  "dispatched_through",
+  "destination",
+  "section_break_chjk",
+  "description_of_goods",
+  "hsnsac",
+  "quantity",
+  "rate",
+  "per",
+  "amount",
+  "company_pan",
+  "input_igst",
+  "input_igst_amount",
+  "total_amount",
+  "total_amount_in_words"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_djd3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "from_address",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "From Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "from_gstinuin",
+   "fieldtype": "Data",
+   "label": "From GSTIN/UIN"
+  },
+  {
+   "fieldname": "from_state",
+   "fieldtype": "Data",
+   "label": "From State"
+  },
+  {
+   "fieldname": "from__code",
+   "fieldtype": "Data",
+   "label": "From  code"
+  },
+  {
+   "fieldname": "cin",
+   "fieldtype": "Data",
+   "label": "CIN"
+  },
+  {
+   "fieldname": "from_email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "From Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "to_address",
+   "fieldtype": "Data",
+   "label": "To Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "to_gstinuin",
+   "fieldtype": "Data",
+   "label": "To GSTIN/UIN"
+  },
+  {
+   "fieldname": "to_state",
+   "fieldtype": "Data",
+   "label": "To State"
+  },
+  {
+   "fieldname": "to_code",
+   "fieldtype": "Data",
+   "label": "To Code"
+  },
+  {
+   "fieldname": "vocher_no",
+   "fieldtype": "Int",
+   "label": "Vocher no.",
+   "reqd": 1
+  },
+  {
+   "fieldname": "dated",
+   "fieldtype": "Date",
+   "label": "Dated",
+   "reqd": 1
+  },
+  {
+   "fieldname": "pin",
+   "fieldtype": "Int",
+   "label": "PIN"
+  },
+  {
+   "fieldname": "column_break_um7g",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "modeterms_of_payment",
+   "fieldtype": "Select",
+   "label": "Mode/Terms of Payment",
+   "options": "\nImmediate\nCash On Delivery\nLater",
+   "reqd": 1
+  },
+  {
+   "fieldname": "terms_of_delivery",
+   "fieldtype": "Data",
+   "label": "Terms of Delivery"
+  },
+  {
+   "fieldname": "other_references",
+   "fieldtype": "Data",
+   "label": "Other References"
+  },
+  {
+   "fieldname": "dispatched_through",
+   "fieldtype": "Data",
+   "label": "Dispatched through"
+  },
+  {
+   "fieldname": "destination",
+   "fieldtype": "Data",
+   "label": "Destination"
+  },
+  {
+   "fieldname": "section_break_0iyt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_chjk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description_of_goods",
+   "fieldtype": "Data",
+   "label": "Description of Goods",
+   "reqd": 1
+  },
+  {
+   "fieldname": "hsnsac",
+   "fieldtype": "Int",
+   "label": " HSN/SAC",
+   "reqd": 1
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Data",
+   "label": "Quantity",
+   "reqd": 1
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Float",
+   "label": "Rate",
+   "reqd": 1
+  },
+  {
+   "fieldname": "per",
+   "fieldtype": "Data",
+   "label": "per",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Float",
+   "label": "Amount",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company_pan",
+   "fieldtype": "Data",
+   "label": "Company PAN",
+   "reqd": 1
+  },
+  {
+   "fieldname": "input_igst",
+   "fieldtype": "Float",
+   "label": "InPut IGST"
+  },
+  {
+   "fieldname": "input_igst_amount",
+   "fieldtype": "Float",
+   "label": "Input IGST Amount"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Float",
+   "label": "Total amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_amount_in_words",
+   "fieldtype": "Data",
+   "label": "Total amount in words",
+   "read_only": 1
+  },
+  {
+   "fieldname": "from_industry",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "From Industry",
+   "reqd": 1
+  },
+  {
+   "fieldname": "to_induustry",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "To Industry",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-09 10:49:01.310683",
+ "modified_by": "Administrator",
+ "module": "New Hilltop",
+ "name": "Sales order hilltop",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

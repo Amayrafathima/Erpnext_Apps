@@ -1,0 +1,111 @@
+{
+    "frappe": {
+        "resolution": {
+            "commit_hash": null,
+            "branch": null
+        },
+        "required": [],
+        "idx": 1,
+        "version": "15.11.0"
+    },
+    "erpnext": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "cc195777f4ac85dd69cd370a683fba5f4210bc32",
+            "branch": "version-15"
+        },
+        "required": [],
+        "idx": 2,
+        "version": "15.10.5"
+    },
+    "india_compliance": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "07fa7eb4cf37030852b2f6b5bdaf256c29ec78a5",
+            "branch": "version-15"
+        },
+        "required": [],
+        "idx": 3,
+        "version": "15.4.1"
+    },
+    "frappe_whatsapp": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "780f635f94f5b05274f24716a2b06a72c7560527",
+            "branch": "master"
+        },
+        "required": [],
+        "idx": 4,
+        "version": "0.0.2"
+    },
+    "pdf_on_submit": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "e3953c0f5ce5b245be5d3b259403c7569398d7a3",
+            "branch": "version-15"
+        },
+        "required": [],
+        "idx": 5,
+        "version": "15.0.0"
+    },
+    "payments": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "a3a84cdc62f8156d6ec18c15554a0f4d6bcb7d09",
+            "branch": "version-15"
+        },
+        "required": [],
+        "idx": 6,
+        "version": "0.0.1"
+    },
+    "hrms": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "6e30318483d580e18fad0c8aa1ff101f1766376b",
+            "branch": "develop"
+        },
+        "required": [],
+        "idx": 7,
+        "version": "16.0.0-dev"
+    },
+    "new_hilltop": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "1606767ad4bb659ca0fb1c399dc142a2cb34eb53",
+            "branch": "main"
+        },
+        "required": [],
+        "idx": 10,
+        "version": "0.0.1"
+    },
+    "hilltop": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "9d4a55344366095f7faae5cf37eae864af13fd76",
+            "branch": "main"
+        },
+        "required": [],
+        "idx": 11,
+        "version": "0.0.1"
+    },
+    "hilltop_custom": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "89cb744ce1a13d459457e5b1c02b016a698d6981",
+            "branch": "develop"
+        },
+        "required": [],
+        "idx": 10,
+        "version": "0.0.1"
+    },
+    "custom_app": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "0a53ca9f74222f74594e1e5349c9f5262f808e53",
+            "branch": "develop"
+        },
+        "required": [],
+        "idx": 11,
+        "version": "0.0.1"
+    }
+}

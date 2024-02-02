@@ -1,0 +1,1639 @@
+2024-01-24 17:16:23,119 WARNING database DDL Query made to DB:
+create table `tabEmployee Tax Exemption Sub Category` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`exemption_category` varchar(140),
+`max_amount` decimal(21,9) not null default 0,
+`is_active` int(1) not null default 1,
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:16:23,176 WARNING database DDL Query made to DB:
+create table `tabSalary Slip Timesheet` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`time_sheet` varchar(140),
+`working_hours` decimal(21,9) not null default 0,
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:16:23,238 WARNING database DDL Query made to DB:
+create table `tabSalary Structure` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`company` varchar(140),
+`letter_head` varchar(140),
+`is_active` varchar(140) default 'Yes',
+`is_default` varchar(140) default 'No',
+`currency` varchar(140),
+`amended_from` varchar(140),
+`leave_encashment_amount_per_day` decimal(21,9) not null default 0,
+`max_benefits` decimal(21,9) not null default 0,
+`salary_slip_based_on_timesheet` int(1) not null default 0,
+`payroll_frequency` varchar(140) default 'Monthly',
+`salary_component` varchar(140),
+`hour_rate` decimal(21,9) not null default 0,
+`total_earning` decimal(21,9) not null default 0,
+`total_deduction` decimal(21,9) not null default 0,
+`net_pay` decimal(21,9) not null default 0,
+`mode_of_payment` varchar(140),
+`payment_account` varchar(140),
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index `company`(`company`),
+index `currency`(`currency`),
+index `salary_slip_based_on_timesheet`(`salary_slip_based_on_timesheet`),
+index `payroll_frequency`(`payroll_frequency`),
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:16:23,296 WARNING database DDL Query made to DB:
+create table `tabGratuity Rule` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`disable` int(1) not null default 0,
+`calculate_gratuity_amount_based_on` varchar(140),
+`total_working_days_per_year` int(11) not null default 365,
+`work_experience_calculation_function` varchar(140) default 'Round off Work Experience',
+`minimum_year_for_gratuity` int(11) not null default 0,
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:16:23,359 WARNING database DDL Query made to DB:
+create table `tabRetention Bonus` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`employee` varchar(140),
+`employee_name` varchar(140),
+`department` varchar(140),
+`company` varchar(140),
+`date_of_joining` varchar(140),
+`salary_component` varchar(140),
+`bonus_amount` decimal(21,9) not null default 0,
+`bonus_payment_date` date,
+`currency` varchar(140),
+`amended_from` varchar(140),
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:16:23,416 WARNING database DDL Query made to DB:
+create table `tabPayroll Employee Detail` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`employee` varchar(140),
+`employee_name` varchar(140),
+`department` varchar(140),
+`designation` varchar(140),
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:16:23,483 WARNING database DDL Query made to DB:
+create table `tabSalary Detail` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`salary_component` varchar(140),
+`abbr` varchar(140),
+`amount` decimal(21,9) not null default 0,
+`year_to_date` decimal(21,9) not null default 0,
+`additional_salary` varchar(140),
+`is_recurring_additional_salary` int(1) not null default 0,
+`statistical_component` int(1) not null default 0,
+`depends_on_payment_days` int(1) not null default 0,
+`exempted_from_income_tax` int(1) not null default 0,
+`is_tax_applicable` int(1) not null default 0,
+`is_flexible_benefit` int(1) not null default 0,
+`variable_based_on_taxable_salary` int(1) not null default 0,
+`do_not_include_in_total` int(1) not null default 0,
+`deduct_full_tax_on_selected_payroll_date` int(1) not null default 0,
+`condition` longtext,
+`amount_based_on_formula` int(1) not null default 0,
+`formula` longtext,
+`default_amount` decimal(21,9) not null default 0,
+`additional_amount` decimal(21,9) not null default 0,
+`tax_on_flexible_benefit` decimal(21,9) not null default 0,
+`tax_on_additional_salary` decimal(21,9) not null default 0,
+index `salary_component`(`salary_component`),
+index `exempted_from_income_tax`(`exempted_from_income_tax`),
+index `is_tax_applicable`(`is_tax_applicable`),
+index `variable_based_on_taxable_salary`(`variable_based_on_taxable_salary`),
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:16:23,537 WARNING database DDL Query made to DB:
+create table `tabEmployee Tax Exemption Proof Submission` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`employee` varchar(140),
+`employee_name` varchar(140),
+`department` varchar(140),
+`currency` varchar(140),
+`amended_from` varchar(140),
+`submission_date` date,
+`payroll_period` varchar(140),
+`company` varchar(140),
+`total_actual_amount` decimal(21,9) not null default 0,
+`exemption_amount` decimal(21,9) not null default 0,
+`attachments` text,
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:16:23,611 WARNING database DDL Query made to DB:
+create table `tabAdditional Salary` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`naming_series` varchar(140),
+`employee` varchar(140),
+`employee_name` varchar(140),
+`department` varchar(140),
+`company` varchar(140),
+`is_recurring` int(1) not null default 0,
+`disabled` int(1) not null default 0,
+`from_date` date,
+`to_date` date,
+`payroll_date` date,
+`amended_from` varchar(140),
+`salary_component` varchar(140),
+`type` varchar(140),
+`currency` varchar(140),
+`amount` decimal(21,9) not null default 0,
+`deduct_full_tax_on_selected_payroll_date` int(1) not null default 0,
+`overwrite_salary_structure_amount` int(1) not null default 1,
+`ref_doctype` varchar(140),
+`ref_docname` varchar(140),
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index `employee`(`employee`),
+index `payroll_date`(`payroll_date`),
+index `salary_component`(`salary_component`),
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:16:23,662 WARNING database DDL Query made to DB:
+create table `tabTaxable Salary Slab` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`from_amount` decimal(21,9) not null default 0,
+`to_amount` decimal(21,9) not null default 0,
+`percent_deduction` decimal(21,9) not null default 0,
+`condition` longtext,
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:16:23,716 WARNING database DDL Query made to DB:
+create table `tabEmployee Benefit Application` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`employee` varchar(140),
+`employee_name` varchar(140),
+`department` varchar(140),
+`date` date,
+`payroll_period` varchar(140),
+`company` varchar(140),
+`amended_from` varchar(140),
+`currency` varchar(140),
+`max_benefits` decimal(21,9) not null default 0,
+`remaining_benefit` decimal(21,9) not null default 0,
+`total_amount` decimal(21,9) not null default 0,
+`pro_rata_dispensed_amount` decimal(21,9) not null default 0,
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:16:23,766 WARNING database DDL Query made to DB:
+create table `tabPayroll Period Date` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`start_date` date,
+`end_date` date,
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:16:23,837 WARNING database DDL Query made to DB:
+create table `tabPayroll Entry` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`posting_date` date,
+`company` varchar(140),
+`currency` varchar(140),
+`exchange_rate` decimal(21,9) not null default 0,
+`payroll_payable_account` varchar(140),
+`status` varchar(140),
+`salary_slip_based_on_timesheet` int(1) not null default 0,
+`payroll_frequency` varchar(140),
+`start_date` date,
+`end_date` date,
+`deduct_tax_for_unclaimed_employee_benefits` int(1) not null default 0,
+`deduct_tax_for_unsubmitted_tax_exemption_proof` int(1) not null default 0,
+`branch` varchar(140),
+`department` varchar(140),
+`designation` varchar(140),
+`grade` varchar(140),
+`number_of_employees` int(11) not null default 0,
+`validate_attendance` int(1) not null default 0,
+`cost_center` varchar(140),
+`project` varchar(140),
+`payment_account` varchar(140),
+`bank_account` varchar(140),
+`salary_slips_created` int(1) not null default 0,
+`salary_slips_submitted` int(1) not null default 0,
+`error_message` text,
+`amended_from` varchar(140),
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:16:23,890 WARNING database DDL Query made to DB:
+create table `tabSalary Slip Leave` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`leave_type` varchar(140),
+`total_allocated_leaves` decimal(21,9) not null default 0,
+`expired_leaves` decimal(21,9) not null default 0,
+`used_leaves` decimal(21,9) not null default 0,
+`pending_leaves` decimal(21,9) not null default 0,
+`available_leaves` decimal(21,9) not null default 0,
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:16:23,944 WARNING database DDL Query made to DB:
+create table `tabIncome Tax Slab` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`disabled` int(1) not null default 0,
+`effective_from` date,
+`company` varchar(140),
+`currency` varchar(140),
+`standard_tax_exemption_amount` decimal(21,9) not null default 0,
+`allow_tax_exemption` int(1) not null default 0,
+`amended_from` varchar(140),
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:16:23,995 WARNING database DDL Query made to DB:
+create table `tabSalary Component Account` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`company` varchar(140),
+`account` varchar(140),
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:16:24,052 WARNING database DDL Query made to DB:
+create table `tabGratuity` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`employee` varchar(140),
+`employee_name` varchar(140),
+`department` varchar(140),
+`designation` varchar(140),
+`current_work_experience` int(11) not null default 0,
+`posting_date` date,
+`gratuity_rule` varchar(140),
+`status` varchar(140) default 'Draft',
+`company` varchar(140),
+`amended_from` varchar(140),
+`pay_via_salary_slip` int(1) not null default 1,
+`amount` decimal(21,9) not null default 0,
+`paid_amount` decimal(21,9) not null default 0,
+`payroll_date` date,
+`salary_component` varchar(140),
+`cost_center` varchar(140),
+`mode_of_payment` varchar(140),
+`expense_account` varchar(140),
+`payable_account` varchar(140),
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index `employee`(`employee`),
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:16:24,100 WARNING database DDL Query made to DB:
+create table `tabPayroll Period` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`company` varchar(140),
+`start_date` date,
+`end_date` date,
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:16:24,162 WARNING database DDL Query made to DB:
+create table `tabEmployee Tax Exemption Declaration` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`employee` varchar(140),
+`employee_name` varchar(140),
+`department` varchar(140),
+`company` varchar(140),
+`payroll_period` varchar(140),
+`currency` varchar(140),
+`amended_from` varchar(140),
+`total_declared_amount` decimal(21,9) not null default 0,
+`total_exemption_amount` decimal(21,9) not null default 0,
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:16:24,215 WARNING database DDL Query made to DB:
+create table `tabGratuity Applicable Component` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`salary_component` varchar(140),
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:16:24,259 WARNING database DDL Query made to DB:
+create table `tabEmployee Benefit Application Detail` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`earning_component` varchar(140),
+`pay_against_benefit_claim` int(1) not null default 0,
+`max_benefit_amount` decimal(21,9) not null default 0,
+`amount` decimal(21,9) not null default 0,
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:16:24,306 WARNING database DDL Query made to DB:
+create table `tabEmployee Tax Exemption Declaration Category` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`exemption_sub_category` varchar(140),
+`exemption_category` varchar(140),
+`max_amount` decimal(21,9) not null default 0,
+`amount` decimal(21,9) not null default 0,
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:16:24,360 WARNING database DDL Query made to DB:
+create table `tabEmployee Other Income` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`employee` varchar(140),
+`employee_name` varchar(140),
+`amended_from` varchar(140),
+`company` varchar(140),
+`payroll_period` varchar(140),
+`source` varchar(140),
+`amount` decimal(21,9) not null default 0,
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index `employee`(`employee`),
+index `company`(`company`),
+index `payroll_period`(`payroll_period`),
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:16:24,432 WARNING database DDL Query made to DB:
+create table `tabSalary Structure Assignment` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`employee` varchar(140),
+`employee_name` varchar(140),
+`department` varchar(140),
+`designation` varchar(140),
+`grade` varchar(140),
+`salary_structure` varchar(140),
+`from_date` date,
+`income_tax_slab` varchar(140),
+`company` varchar(140),
+`payroll_payable_account` varchar(140),
+`currency` varchar(140),
+`base` decimal(21,9) not null default 0,
+`variable` decimal(21,9) not null default 0,
+`amended_from` varchar(140),
+`taxable_earnings_till_date` decimal(21,9) not null default 0,
+`tax_deducted_till_date` decimal(21,9) not null default 0,
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index `employee`(`employee`),
+index `salary_structure`(`salary_structure`),
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:16:24,487 WARNING database DDL Query made to DB:
+create table `tabEmployee Incentive` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`employee` varchar(140),
+`employee_name` varchar(140),
+`amended_from` varchar(140),
+`company` varchar(140),
+`department` varchar(140),
+`salary_component` varchar(140),
+`currency` varchar(140),
+`payroll_date` date,
+`incentive_amount` decimal(21,9) not null default 0,
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:16:24,541 WARNING database DDL Query made to DB:
+create table `tabIncome Tax Slab Other Charges` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`description` varchar(140),
+`percent` decimal(21,9) not null default 0,
+`min_taxable_income` decimal(21,9) not null default 0,
+`max_taxable_income` decimal(21,9) not null default 0,
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:16:24,587 WARNING database DDL Query made to DB:
+create table `tabEmployee Tax Exemption Proof Submission Detail` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`exemption_sub_category` varchar(140),
+`exemption_category` varchar(140),
+`max_amount` decimal(21,9) not null default 0,
+`type_of_proof` varchar(140),
+`amount` decimal(21,9) not null default 0,
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:16:24,687 WARNING database DDL Query made to DB:
+create table `tabSalary Slip` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`employee` varchar(140),
+`employee_name` varchar(140),
+`department` varchar(140),
+`designation` varchar(140),
+`branch` varchar(140),
+`posting_date` date,
+`letter_head` varchar(140),
+`status` varchar(140),
+`company` varchar(140),
+`currency` varchar(140),
+`exchange_rate` decimal(21,9) not null default 1.0,
+`payroll_frequency` varchar(140),
+`start_date` date,
+`end_date` date,
+`salary_structure` varchar(140),
+`payroll_entry` varchar(140),
+`mode_of_payment` varchar(140),
+`salary_slip_based_on_timesheet` int(1) not null default 0,
+`deduct_tax_for_unclaimed_employee_benefits` int(1) not null default 0,
+`deduct_tax_for_unsubmitted_tax_exemption_proof` int(1) not null default 0,
+`total_working_days` decimal(21,9) not null default 0,
+`unmarked_days` decimal(21,9) not null default 0,
+`leave_without_pay` decimal(21,9) not null default 0,
+`absent_days` decimal(21,9) not null default 0,
+`payment_days` decimal(21,9) not null default 0,
+`total_working_hours` decimal(21,9) not null default 0,
+`hour_rate` decimal(21,9) not null default 0,
+`base_hour_rate` decimal(21,9) not null default 0,
+`gross_pay` decimal(21,9) not null default 0,
+`base_gross_pay` decimal(21,9) not null default 0,
+`gross_year_to_date` decimal(21,9) not null default 0,
+`base_gross_year_to_date` decimal(21,9) not null default 0,
+`total_deduction` decimal(21,9) not null default 0,
+`base_total_deduction` decimal(21,9) not null default 0,
+`net_pay` decimal(21,9) not null default 0,
+`base_net_pay` decimal(21,9) not null default 0,
+`rounded_total` decimal(21,9) not null default 0,
+`base_rounded_total` decimal(21,9) not null default 0,
+`year_to_date` decimal(21,9) not null default 0,
+`base_year_to_date` decimal(21,9) not null default 0,
+`month_to_date` decimal(21,9) not null default 0,
+`base_month_to_date` decimal(21,9) not null default 0,
+`total_in_words` varchar(240),
+`base_total_in_words` varchar(240),
+`ctc` decimal(21,9) not null default 0,
+`income_from_other_sources` decimal(21,9) not null default 0,
+`total_earnings` decimal(21,9) not null default 0,
+`non_taxable_earnings` decimal(21,9) not null default 0,
+`standard_tax_exemption_amount` decimal(21,9) not null default 0,
+`tax_exemption_declaration` decimal(21,9) not null default 0,
+`deductions_before_tax_calculation` decimal(21,9) not null default 0,
+`annual_taxable_amount` decimal(21,9) not null default 0,
+`income_tax_deducted_till_date` decimal(21,9) not null default 0,
+`current_month_income_tax` decimal(21,9) not null default 0,
+`future_income_tax_deductions` decimal(21,9) not null default 0,
+`total_income_tax` decimal(21,9) not null default 0,
+`journal_entry` varchar(140),
+`amended_from` varchar(140),
+`bank_name` varchar(140),
+`bank_account_no` varchar(140),
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index `employee`(`employee`),
+index `start_date`(`start_date`),
+index `end_date`(`end_date`),
+index `salary_structure`(`salary_structure`),
+index `payroll_entry`(`payroll_entry`),
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:16:24,728 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSalary Slip`
+				ADD INDEX `employee_start_date_end_date_index`(employee, start_date, end_date)
+2024-01-24 17:16:24,752 WARNING database DDL Query made to DB:
+create table `tabEmployee Cost Center` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`cost_center` varchar(140),
+`percentage` int(11) not null default 0,
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:16:24,798 WARNING database DDL Query made to DB:
+create table `tabEmployee Tax Exemption Category` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`max_amount` decimal(21,9) not null default 0,
+`is_active` int(1) not null default 1,
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:17:33,737 WARNING database DDL Query made to DB:
+create table `tabGST UOM Map` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`uom` varchar(140) unique,
+`gst_uom` varchar(140),
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:17:33,786 WARNING database DDL Query made to DB:
+create table `tabe-Waybill Log` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`e_waybill_number` varchar(140) unique,
+`created_on` datetime(6),
+`valid_upto` datetime(6),
+`reference_doctype` varchar(140),
+`reference_name` varchar(140),
+`is_generated_in_sandbox_mode` int(1) not null default 0,
+`is_cancelled` int(1) not null default 0,
+`cancelled_on` datetime(6),
+`cancel_reason_code` varchar(140),
+`cancel_remark` varchar(140),
+`is_latest_data` int(1) not null default 0,
+`data` longtext,
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:17:33,871 WARNING database DDL Query made to DB:
+create table `tabGST Inward Supply` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`company` varchar(140),
+`company_gstin` varchar(140),
+`supplier_name` varchar(140),
+`supplier_gstin` varchar(140),
+`bill_no` varchar(140),
+`doc_type` varchar(140),
+`place_of_supply` varchar(140),
+`bill_date` date,
+`supply_type` varchar(140),
+`classification` varchar(140),
+`is_reverse_charge` int(1) not null default 0,
+`document_value` decimal(21,9) not null default 0,
+`diffprcnt` varchar(140),
+`port_code` varchar(140),
+`irn_source` varchar(140),
+`irn_number` varchar(140),
+`irn_gen_date` date,
+`itc_availability` varchar(140),
+`return_period_2b` varchar(140),
+`reason_itc_unavailability` varchar(140),
+`gen_date_2b` date,
+`other_return_period` varchar(140),
+`original_bill_no` varchar(140),
+`is_amended` int(1) not null default 0,
+`amendment_type` varchar(140),
+`original_bill_date` date,
+`original_doc_type` varchar(140),
+`action` varchar(140) default 'No Action',
+`link_doctype` varchar(140),
+`match_status` varchar(140),
+`link_name` varchar(140),
+`sup_return_period` varchar(140),
+`gstr_1_filled` int(1) not null default 0,
+`gstr_3b_filled` int(1) not null default 0,
+`gstr_1_filing_date` date,
+`registration_cancel_date` date,
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index `link_name`(`link_name`),
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:17:33,916 WARNING database DDL Query made to DB:
+create table `tabe-Invoice Applicable Company` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`company` varchar(140),
+`applicable_from` date,
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:17:33,958 WARNING database DDL Query made to DB:
+create table `tabGST Credential` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`company` varchar(140),
+`service` varchar(140) default 'e-Waybill / e-Invoice',
+`gstin` varchar(140),
+`username` varchar(140),
+`password` text,
+`app_key` varchar(140),
+`session_key` varchar(140),
+`auth_token` varchar(140),
+`session_expiry` datetime(6),
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:17:34,018 WARNING database DDL Query made to DB:
+create table `tabBill of Entry` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`naming_series` varchar(140),
+`amended_from` varchar(140),
+`purchase_invoice` varchar(140),
+`company` varchar(140),
+`company_gstin` varchar(140),
+`bill_of_entry_no` varchar(140),
+`bill_of_entry_date` date,
+`bill_of_lading_no` varchar(140),
+`port_code` varchar(140),
+`posting_date` date,
+`customs_payable_account` varchar(140),
+`customs_expense_account` varchar(140),
+`reconciliation_status` varchar(140),
+`cost_center` varchar(140),
+`total_taxable_value` decimal(21,9) not null default 0,
+`total_customs_duty` decimal(21,9) not null default 0,
+`total_taxes` decimal(21,9) not null default 0,
+`total_amount_payable` decimal(21,9) not null default 0,
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:17:34,106 WARNING database DDL Query made to DB:
+create table `tabGSTIN` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`gstin` varchar(140) unique,
+`registration_date` date,
+`status` varchar(140),
+`is_blocked` int(1) not null default 0,
+`last_updated_on` datetime(6),
+`cancelled_date` date,
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:17:34,156 WARNING database DDL Query made to DB:
+create table `tabGSTR Import Log` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`gstin` varchar(140),
+`return_type` varchar(140),
+`classification` varchar(140),
+`return_period` varchar(140),
+`last_updated_on` datetime(6),
+`data_not_found` int(1) not null default 0,
+`request_id` varchar(140),
+`request_time` datetime(6),
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:17:34,205 WARNING database DDL Query made to DB:
+create table `tabGST HSN Code` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`hsn_code` varchar(140) unique,
+`description` text,
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:17:34,262 WARNING database DDL Query made to DB:
+create table `tabGST Inward Supply Item` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`item_number` int(11) not null default 0,
+`taxable_value` decimal(21,9) not null default 0,
+`rate` decimal(21,9) not null default 0,
+`igst` decimal(21,9) not null default 0,
+`cgst` decimal(21,9) not null default 0,
+`sgst` decimal(21,9) not null default 0,
+`cess` decimal(21,9) not null default 0,
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:17:34,303 WARNING database DDL Query made to DB:
+create table `tabGSTR 3B Report` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`company` varchar(140),
+`company_address` varchar(140),
+`year` varchar(140),
+`month` varchar(140),
+`enqueue_report` int(1) not null default 0,
+`generation_status` varchar(140),
+`json_output` longtext,
+`missing_field_invoices` text,
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:17:34,363 WARNING database DDL Query made to DB:
+create table `tabe-Invoice Log` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`irn` varchar(140) unique,
+`sales_invoice` varchar(140),
+`is_generated_in_sandbox_mode` int(1) not null default 0,
+`acknowledgement_number` varchar(140),
+`acknowledged_on` datetime(6),
+`invoice_data` longtext,
+`signed_invoice` longtext,
+`signed_qr_code` longtext,
+`is_cancelled` int(1) not null default 0,
+`cancelled_on` datetime(6),
+`cancel_reason_code` varchar(140),
+`cancel_remark` varchar(140),
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:17:34,414 WARNING database DDL Query made to DB:
+create table `tabBill of Entry Taxes` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`charge_type` varchar(140) default 'On Net Total',
+`account_head` varchar(140),
+`rate` decimal(21,9) not null default 0,
+`tax_amount` decimal(21,9) not null default 0,
+`total` decimal(21,9) not null default 0,
+`item_wise_tax_rates` longtext,
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:17:34,456 WARNING database DDL Query made to DB:
+create table `tabBill of Entry Item` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`item_code` varchar(140),
+`item_name` varchar(140),
+`assessable_value` decimal(21,9) not null default 0,
+`customs_duty` decimal(21,9) not null default 0,
+`pi_detail` varchar(140),
+`taxable_value` decimal(21,9) not null default 0,
+`item_tax_template` varchar(140),
+`is_ineligible_for_itc` int(1) not null default 0,
+`cost_center` varchar(140),
+`project` varchar(140),
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:17:34,495 WARNING database DDL Query made to DB:
+create table `tabGST Account` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`company` varchar(140),
+`account_type` varchar(140),
+`cgst_account` varchar(140),
+`sgst_account` varchar(140),
+`igst_account` varchar(140),
+`cess_account` varchar(140),
+`cess_non_advol_account` varchar(140),
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:17:34,734 WARNING database DDL Query made to DB:
+create table `tabC-Form` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`naming_series` varchar(140),
+`c_form_no` varchar(140),
+`received_date` date,
+`customer` varchar(140),
+`company` varchar(140),
+`quarter` varchar(140),
+`total_amount` decimal(21,9) not null default 0,
+`state` varchar(140),
+`total_invoiced_amount` decimal(21,9) not null default 0,
+`amended_from` varchar(140),
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:17:34,779 WARNING database DDL Query made to DB:
+create table `tabC-Form Invoice Detail` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`invoice_no` varchar(140),
+`invoice_date` date,
+`territory` varchar(140),
+`net_total` decimal(21,9) not null default 0,
+`grand_total` decimal(21,9) not null default 0,
+parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-24 17:17:35,679 WARNING database DDL Query made to DB:
+ALTER TABLE `tabFinance Book` ADD COLUMN `for_income_tax` int(1) not null default 0
+2024-01-24 17:17:35,704 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCompany` ADD COLUMN `pan` varchar(140)
+2024-01-24 17:17:35,708 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCompany` MODIFY `credit_limit` decimal(21,9) not null default 0, MODIFY `monthly_sales_target` decimal(21,9) not null default 0, MODIFY `total_monthly_sales` decimal(21,9) not null default 0
+2024-01-24 17:17:35,733 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` ADD COLUMN `pan` varchar(140)
+2024-01-24 17:17:35,737 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `default_commission_rate` decimal(21,9) not null default 0
+2024-01-24 17:17:35,760 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSupplier` ADD COLUMN `pan` varchar(140)
+2024-01-24 17:17:36,491 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPurchase Receipt Item` ADD COLUMN `gst_hsn_code` varchar(140), ADD COLUMN `is_ineligible_for_itc` int(1) not null default 0, ADD COLUMN `gst_treatment` varchar(140), ADD COLUMN `taxable_value` decimal(21,9) not null default 0, ADD COLUMN `igst_rate` decimal(21,9) not null default 0, ADD COLUMN `cgst_rate` decimal(21,9) not null default 0, ADD COLUMN `sgst_rate` decimal(21,9) not null default 0, ADD COLUMN `cess_rate` decimal(21,9) not null default 0, ADD COLUMN `cess_non_advol_rate` decimal(21,9) not null default 0, ADD COLUMN `igst_amount` decimal(21,9) not null default 0, ADD COLUMN `cgst_amount` decimal(21,9) not null default 0, ADD COLUMN `sgst_amount` decimal(21,9) not null default 0, ADD COLUMN `cess_amount` decimal(21,9) not null default 0, ADD COLUMN `cess_non_advol_amount` decimal(21,9) not null default 0
+2024-01-24 17:17:36,495 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPurchase Receipt Item` MODIFY `margin_rate_or_amount` decimal(21,9) not null default 0, MODIFY `base_net_amount` decimal(21,9) not null default 0, MODIFY `returned_qty` decimal(21,9) not null default 0, MODIFY `stock_qty` decimal(21,9) not null default 0, MODIFY `discount_percentage` decimal(21,9) not null default 0, MODIFY `discount_amount` decimal(21,9) not null default 0, MODIFY `base_rate_with_margin` decimal(21,9) not null default 0, MODIFY `price_list_rate` decimal(21,9) not null default 0, MODIFY `rate_with_margin` decimal(21,9) not null default 0, MODIFY `rm_supp_cost` decimal(21,9) not null default 0, MODIFY `rate_difference_with_purchase_invoice` decimal(21,9) not null default 0, MODIFY `net_amount` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0, MODIFY `base_rate` decimal(21,9) not null default 0, MODIFY `base_amount` decimal(21,9) not null default 0, MODIFY `conversion_factor` decimal(21,9) not null default 0, MODIFY `billed_amt` decimal(21,9) not null default 0, MODIFY `net_rate` decimal(21,9) not null default 0, MODIFY `weight_per_unit` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0, MODIFY `base_price_list_rate` decimal(21,9) not null default 0, MODIFY `stock_uom_rate` decimal(21,9) not null default 0, MODIFY `landed_cost_voucher_amount` decimal(21,9) not null default 0, MODIFY `base_net_rate` decimal(21,9) not null default 0, MODIFY `item_tax_amount` decimal(21,9) not null default 0, MODIFY `rejected_qty` decimal(21,9) not null default 0, MODIFY `valuation_rate` decimal(21,9) not null default 0, MODIFY `total_weight` decimal(21,9) not null default 0, MODIFY `received_stock_qty` decimal(21,9) not null default 0
+2024-01-24 17:17:36,523 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSupplier Quotation` ADD COLUMN `supplier_gstin` varchar(140), ADD COLUMN `gst_category` varchar(140), ADD COLUMN `company_gstin` varchar(140), ADD COLUMN `place_of_supply` varchar(140), ADD COLUMN `is_reverse_charge` int(1) not null default 0
+2024-01-24 17:17:36,527 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSupplier Quotation` MODIFY `base_total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `base_grand_total` decimal(21,9) not null default 0, MODIFY `taxes_and_charges_deducted` decimal(21,9) not null default 0, MODIFY `rounded_total` decimal(21,9) not null default 0, MODIFY `taxes_and_charges_added` decimal(21,9) not null default 0, MODIFY `additional_discount_percentage` decimal(21,9) not null default 0, MODIFY `discount_amount` decimal(21,9) not null default 0, MODIFY `grand_total` decimal(21,9) not null default 0, MODIFY `base_taxes_and_charges_added` decimal(21,9) not null default 0, MODIFY `total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `base_rounding_adjustment` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `total_qty` decimal(21,9) not null default 0, MODIFY `base_rounded_total` decimal(21,9) not null default 0, MODIFY `base_net_total` decimal(21,9) not null default 0, MODIFY `base_taxes_and_charges_deducted` decimal(21,9) not null default 0, MODIFY `total` decimal(21,9) not null default 0, MODIFY `total_net_weight` decimal(21,9) not null default 0, MODIFY `plc_conversion_rate` decimal(21,9) not null default 0, MODIFY `net_total` decimal(21,9) not null default 0, MODIFY `base_discount_amount` decimal(21,9) not null default 0, MODIFY `rounding_adjustment` decimal(21,9) not null default 0
+2024-01-24 17:17:36,554 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSupplier Quotation Item` ADD COLUMN `gst_hsn_code` varchar(140), ADD COLUMN `is_ineligible_for_itc` int(1) not null default 0, ADD COLUMN `gst_treatment` varchar(140), ADD COLUMN `taxable_value` decimal(21,9) not null default 0, ADD COLUMN `igst_rate` decimal(21,9) not null default 0, ADD COLUMN `cgst_rate` decimal(21,9) not null default 0, ADD COLUMN `sgst_rate` decimal(21,9) not null default 0, ADD COLUMN `cess_rate` decimal(21,9) not null default 0, ADD COLUMN `cess_non_advol_rate` decimal(21,9) not null default 0, ADD COLUMN `igst_amount` decimal(21,9) not null default 0, ADD COLUMN `cgst_amount` decimal(21,9) not null default 0, ADD COLUMN `sgst_amount` decimal(21,9) not null default 0, ADD COLUMN `cess_amount` decimal(21,9) not null default 0, ADD COLUMN `cess_non_advol_amount` decimal(21,9) not null default 0
+2024-01-24 17:17:36,558 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSupplier Quotation Item` MODIFY `discount_percentage` decimal(21,9) not null default 0, MODIFY `net_rate` decimal(21,9) not null default 0, MODIFY `net_amount` decimal(21,9) not null default 0, MODIFY `base_price_list_rate` decimal(21,9) not null default 0, MODIFY `base_amount` decimal(21,9) not null default 0, MODIFY `price_list_rate` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0, MODIFY `weight_per_unit` decimal(21,9) not null default 0, MODIFY `conversion_factor` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0, MODIFY `total_weight` decimal(21,9) not null default 0, MODIFY `stock_qty` decimal(21,9) not null default 0, MODIFY `discount_amount` decimal(21,9) not null default 0, MODIFY `base_net_rate` decimal(21,9) not null default 0, MODIFY `base_net_amount` decimal(21,9) not null default 0, MODIFY `base_rate` decimal(21,9) not null default 0
+2024-01-24 17:17:36,575 WARNING database DDL Query made to DB:
+ALTER TABLE `tabTax Category` ADD COLUMN `is_inter_state` int(1) not null default 0, ADD COLUMN `is_reverse_charge` int(1) not null default 0, ADD COLUMN `gst_state` varchar(140)
+2024-01-24 17:17:36,602 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCompany` ADD COLUMN `default_gst_rate` varchar(140) default '18.0', ADD COLUMN `gstin` varchar(140), ADD COLUMN `gst_category` varchar(140) default 'Unregistered', ADD COLUMN `default_customs_expense_account` varchar(140), ADD COLUMN `default_gst_expense_account` varchar(140), ADD COLUMN `default_customs_payable_account` varchar(140)
+2024-01-24 17:17:36,606 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCompany` MODIFY `monthly_sales_target` decimal(21,9) not null default 0, MODIFY `credit_limit` decimal(21,9) not null default 0, MODIFY `total_monthly_sales` decimal(21,9) not null default 0
+2024-01-24 17:17:36,639 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPOS Invoice` ADD COLUMN `billing_address_gstin` varchar(15), ADD COLUMN `gst_category` varchar(140), ADD COLUMN `place_of_supply` varchar(50), ADD COLUMN `company_gstin` varchar(15)
+2024-01-24 17:17:36,643 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPOS Invoice` MODIFY `total_qty` decimal(21,9) not null default 0, MODIFY `total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `base_grand_total` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `loyalty_amount` decimal(21,9) not null default 0, MODIFY `base_paid_amount` decimal(21,9) not null default 0, MODIFY `commission_rate` decimal(21,9) not null default 0, MODIFY `base_rounding_adjustment` decimal(21,9) not null default 0, MODIFY `rounded_total` decimal(21,9) not null default 0, MODIFY `write_off_amount` decimal(21,9) not null default 0, MODIFY `base_write_off_amount` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `discount_amount` decimal(21,9) not null default 0, MODIFY `total_net_weight` decimal(21,9) not null default 0, MODIFY `total_advance` decimal(21,9) not null default 0, MODIFY `amount_eligible_for_commission` decimal(21,9) not null default 0, MODIFY `base_net_total` decimal(21,9) not null default 0, MODIFY `total` decimal(21,9) not null default 0, MODIFY `paid_amount` decimal(21,9) not null default 0, MODIFY `base_rounded_total` decimal(21,9) not null default 0, MODIFY `net_total` decimal(21,9) not null default 0, MODIFY `rounding_adjustment` decimal(21,9) not null default 0, MODIFY `change_amount` decimal(21,9) not null default 0, MODIFY `base_change_amount` decimal(21,9) not null default 0, MODIFY `grand_total` decimal(21,9) not null default 0, MODIFY `base_discount_amount` decimal(21,9) not null default 0, MODIFY `plc_conversion_rate` decimal(21,9) not null default 0, MODIFY `outstanding_amount` decimal(21,9) not null default 0, MODIFY `total_commission` decimal(21,9) not null default 0, MODIFY `base_total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `additional_discount_percentage` decimal(21,9) not null default 0
+2024-01-24 17:17:36,674 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPurchase Order Item` ADD COLUMN `gst_hsn_code` varchar(140), ADD COLUMN `is_ineligible_for_itc` int(1) not null default 0, ADD COLUMN `gst_treatment` varchar(140), ADD COLUMN `taxable_value` decimal(21,9) not null default 0, ADD COLUMN `igst_rate` decimal(21,9) not null default 0, ADD COLUMN `cgst_rate` decimal(21,9) not null default 0, ADD COLUMN `sgst_rate` decimal(21,9) not null default 0, ADD COLUMN `cess_rate` decimal(21,9) not null default 0, ADD COLUMN `cess_non_advol_rate` decimal(21,9) not null default 0, ADD COLUMN `igst_amount` decimal(21,9) not null default 0, ADD COLUMN `cgst_amount` decimal(21,9) not null default 0, ADD COLUMN `sgst_amount` decimal(21,9) not null default 0, ADD COLUMN `cess_amount` decimal(21,9) not null default 0, ADD COLUMN `cess_non_advol_amount` decimal(21,9) not null default 0
+2024-01-24 17:17:36,678 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPurchase Order Item` MODIFY `price_list_rate` decimal(21,9) not null default 0, MODIFY `base_price_list_rate` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0, MODIFY `received_qty` decimal(21,9) not null default 0, MODIFY `base_rate` decimal(21,9) not null default 0, MODIFY `blanket_order_rate` decimal(21,9) not null default 0, MODIFY `base_amount` decimal(21,9) not null default 0, MODIFY `base_net_amount` decimal(21,9) not null default 0, MODIFY `base_net_rate` decimal(21,9) not null default 0, MODIFY `base_rate_with_margin` decimal(21,9) not null default 0, MODIFY `net_amount` decimal(21,9) not null default 0, MODIFY `stock_uom_rate` decimal(21,9) not null default 0, MODIFY `billed_amt` decimal(21,9) not null default 0, MODIFY `returned_qty` decimal(21,9) not null default 0, MODIFY `margin_rate_or_amount` decimal(21,9) not null default 0, MODIFY `conversion_factor` decimal(21,9) not null default 0, MODIFY `rate_with_margin` decimal(21,9) not null default 0, MODIFY `last_purchase_rate` decimal(21,9) not null default 0, MODIFY `total_weight` decimal(21,9) not null default 0, MODIFY `discount_percentage` decimal(21,9) not null default 0, MODIFY `stock_qty` decimal(21,9) not null default 0, MODIFY `company_total_stock` decimal(21,9) not null default 0, MODIFY `weight_per_unit` decimal(21,9) not null default 0, MODIFY `actual_qty` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0, MODIFY `discount_amount` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0, MODIFY `net_rate` decimal(21,9) not null default 0
+2024-01-24 17:17:36,699 WARNING database DDL Query made to DB:
+ALTER TABLE `tabAddress` ADD COLUMN `gstin` varchar(140), ADD COLUMN `gst_state` varchar(140), ADD COLUMN `gst_category` varchar(140) default 'Unregistered', ADD COLUMN `gst_state_number` varchar(140)
+2024-01-24 17:17:36,727 WARNING database DDL Query made to DB:
+ALTER TABLE `tabDelivery Note Item` ADD COLUMN `gst_hsn_code` varchar(140), ADD COLUMN `gst_treatment` varchar(140), ADD COLUMN `taxable_value` decimal(21,9) not null default 0, ADD COLUMN `igst_rate` decimal(21,9) not null default 0, ADD COLUMN `cgst_rate` decimal(21,9) not null default 0, ADD COLUMN `sgst_rate` decimal(21,9) not null default 0, ADD COLUMN `cess_rate` decimal(21,9) not null default 0, ADD COLUMN `cess_non_advol_rate` decimal(21,9) not null default 0, ADD COLUMN `igst_amount` decimal(21,9) not null default 0, ADD COLUMN `cgst_amount` decimal(21,9) not null default 0, ADD COLUMN `sgst_amount` decimal(21,9) not null default 0, ADD COLUMN `cess_amount` decimal(21,9) not null default 0, ADD COLUMN `cess_non_advol_amount` decimal(21,9) not null default 0
+2024-01-24 17:17:36,731 WARNING database DDL Query made to DB:
+ALTER TABLE `tabDelivery Note Item` MODIFY `received_qty` decimal(21,9) not null default 0, MODIFY `price_list_rate` decimal(21,9) not null default 0, MODIFY `rate_with_margin` decimal(21,9) not null default 0, MODIFY `net_amount` decimal(21,9) not null default 0, MODIFY `discount_percentage` decimal(21,9) not null default 0, MODIFY `actual_batch_qty` decimal(21,9) not null default 0, MODIFY `base_rate_with_margin` decimal(21,9) not null default 0, MODIFY `discount_amount` decimal(21,9) not null default 0, MODIFY `base_net_rate` decimal(21,9) not null default 0, MODIFY `margin_rate_or_amount` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0, MODIFY `incoming_rate` decimal(21,9) not null default 0, MODIFY `base_net_amount` decimal(21,9) not null default 0, MODIFY `weight_per_unit` decimal(21,9) not null default 0, MODIFY `stock_qty` decimal(21,9) not null default 0, MODIFY `net_rate` decimal(21,9) not null default 0, MODIFY `actual_qty` decimal(21,9) not null default 0, MODIFY `stock_uom_rate` decimal(21,9) not null default 0, MODIFY `base_amount` decimal(21,9) not null default 0, MODIFY `billed_amt` decimal(21,9) not null default 0, MODIFY `conversion_factor` decimal(21,9) not null default 0, MODIFY `base_rate` decimal(21,9) not null default 0, MODIFY `installed_qty` decimal(21,9) not null default 0, MODIFY `base_price_list_rate` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0, MODIFY `returned_qty` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0, MODIFY `total_weight` decimal(21,9) not null default 0
+2024-01-24 17:17:36,764 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPurchase Order` ADD COLUMN `is_reverse_charge` int(1) not null default 0, ADD COLUMN `supplier_gstin` varchar(140), ADD COLUMN `gst_category` varchar(140), ADD COLUMN `company_gstin` varchar(140), ADD COLUMN `place_of_supply` varchar(140)
+2024-01-24 17:17:36,767 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPurchase Order` MODIFY `total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `base_taxes_and_charges_added` decimal(21,9) not null default 0, MODIFY `taxes_and_charges_deducted` decimal(21,9) not null default 0, MODIFY `base_total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `grand_total` decimal(21,9) not null default 0, MODIFY `rounded_total` decimal(21,9) not null default 0, MODIFY `advance_paid` decimal(21,9) not null default 0, MODIFY `base_net_total` decimal(21,9) not null default 0, MODIFY `total_net_weight` decimal(21,9) not null default 0, MODIFY `total_qty` decimal(21,9) not null default 0, MODIFY `base_taxes_and_charges_deducted` decimal(21,9) not null default 0, MODIFY `base_grand_total` decimal(21,9) not null default 0, MODIFY `rounding_adjustment` decimal(21,9) not null default 0, MODIFY `total` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `base_discount_amount` decimal(21,9) not null default 0, MODIFY `base_rounded_total` decimal(21,9) not null default 0, MODIFY `net_total` decimal(21,9) not null default 0, MODIFY `additional_discount_percentage` decimal(21,9) not null default 0, MODIFY `taxes_and_charges_added` decimal(21,9) not null default 0, MODIFY `per_received` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `base_rounding_adjustment` decimal(21,9) not null default 0, MODIFY `base_tax_withholding_net_total` decimal(21,9) not null default 0, MODIFY `per_billed` decimal(21,9) not null default 0, MODIFY `discount_amount` decimal(21,9) not null default 0, MODIFY `plc_conversion_rate` decimal(21,9) not null default 0
+2024-01-24 17:17:36,793 WARNING database DDL Query made to DB:
+ALTER TABLE `tabQuotation Item` ADD COLUMN `gst_hsn_code` varchar(140), ADD COLUMN `gst_treatment` varchar(140), ADD COLUMN `taxable_value` decimal(21,9) not null default 0, ADD COLUMN `igst_rate` decimal(21,9) not null default 0, ADD COLUMN `cgst_rate` decimal(21,9) not null default 0, ADD COLUMN `sgst_rate` decimal(21,9) not null default 0, ADD COLUMN `cess_rate` decimal(21,9) not null default 0, ADD COLUMN `cess_non_advol_rate` decimal(21,9) not null default 0, ADD COLUMN `igst_amount` decimal(21,9) not null default 0, ADD COLUMN `cgst_amount` decimal(21,9) not null default 0, ADD COLUMN `sgst_amount` decimal(21,9) not null default 0, ADD COLUMN `cess_amount` decimal(21,9) not null default 0, ADD COLUMN `cess_non_advol_amount` decimal(21,9) not null default 0
+2024-01-24 17:17:36,797 WARNING database DDL Query made to DB:
+ALTER TABLE `tabQuotation Item` MODIFY `rate_with_margin` decimal(21,9) not null default 0, MODIFY `blanket_order_rate` decimal(21,9) not null default 0, MODIFY `base_amount` decimal(21,9) not null default 0, MODIFY `total_weight` decimal(21,9) not null default 0, MODIFY `base_rate_with_margin` decimal(21,9) not null default 0, MODIFY `actual_qty` decimal(21,9) not null default 0, MODIFY `net_rate` decimal(21,9) not null default 0, MODIFY `base_rate` decimal(21,9) not null default 0, MODIFY `base_net_rate` decimal(21,9) not null default 0, MODIFY `valuation_rate` decimal(21,9) not null default 0, MODIFY `margin_rate_or_amount` decimal(21,9) not null default 0, MODIFY `conversion_factor` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0, MODIFY `base_net_amount` decimal(21,9) not null default 0, MODIFY `projected_qty` decimal(21,9) not null default 0, MODIFY `discount_percentage` decimal(21,9) not null default 0, MODIFY `discount_amount` decimal(21,9) not null default 0, MODIFY `weight_per_unit` decimal(21,9) not null default 0, MODIFY `net_amount` decimal(21,9) not null default 0, MODIFY `gross_profit` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0, MODIFY `price_list_rate` decimal(21,9) not null default 0, MODIFY `stock_qty` decimal(21,9) not null default 0, MODIFY `stock_uom_rate` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0, MODIFY `base_price_list_rate` decimal(21,9) not null default 0
+2024-01-24 17:17:36,825 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPOS Invoice Item` ADD COLUMN `gst_hsn_code` varchar(140), ADD COLUMN `gst_treatment` varchar(140), ADD COLUMN `taxable_value` decimal(21,9) not null default 0, ADD COLUMN `igst_rate` decimal(21,9) not null default 0, ADD COLUMN `cgst_rate` decimal(21,9) not null default 0, ADD COLUMN `sgst_rate` decimal(21,9) not null default 0, ADD COLUMN `cess_rate` decimal(21,9) not null default 0, ADD COLUMN `cess_non_advol_rate` decimal(21,9) not null default 0, ADD COLUMN `igst_amount` decimal(21,9) not null default 0, ADD COLUMN `cgst_amount` decimal(21,9) not null default 0, ADD COLUMN `sgst_amount` decimal(21,9) not null default 0, ADD COLUMN `cess_amount` decimal(21,9) not null default 0, ADD COLUMN `cess_non_advol_amount` decimal(21,9) not null default 0
+2024-01-24 17:17:36,829 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPOS Invoice Item` MODIFY `discount_percentage` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0, MODIFY `base_rate` decimal(21,9) not null default 0, MODIFY `actual_qty` decimal(21,9) not null default 0, MODIFY `discount_amount` decimal(21,9) not null default 0, MODIFY `base_rate_with_margin` decimal(21,9) not null default 0, MODIFY `actual_batch_qty` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0, MODIFY `delivered_qty` decimal(21,9) not null default 0, MODIFY `base_amount` decimal(21,9) not null default 0, MODIFY `base_price_list_rate` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0, MODIFY `conversion_factor` decimal(21,9) not null default 0, MODIFY `stock_qty` decimal(21,9) not null default 0, MODIFY `margin_rate_or_amount` decimal(21,9) not null default 0, MODIFY `rate_with_margin` decimal(21,9) not null default 0, MODIFY `net_amount` decimal(21,9) not null default 0, MODIFY `price_list_rate` decimal(21,9) not null default 0, MODIFY `base_net_amount` decimal(21,9) not null default 0, MODIFY `base_net_rate` decimal(21,9) not null default 0, MODIFY `net_rate` decimal(21,9) not null default 0, MODIFY `total_weight` decimal(21,9) not null default 0, MODIFY `weight_per_unit` decimal(21,9) not null default 0
+2024-01-24 17:17:36,860 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSales Order Item` ADD COLUMN `gst_hsn_code` varchar(140), ADD COLUMN `gst_treatment` varchar(140), ADD COLUMN `taxable_value` decimal(21,9) not null default 0, ADD COLUMN `igst_rate` decimal(21,9) not null default 0, ADD COLUMN `cgst_rate` decimal(21,9) not null default 0, ADD COLUMN `sgst_rate` decimal(21,9) not null default 0, ADD COLUMN `cess_rate` decimal(21,9) not null default 0, ADD COLUMN `cess_non_advol_rate` decimal(21,9) not null default 0, ADD COLUMN `igst_amount` decimal(21,9) not null default 0, ADD COLUMN `cgst_amount` decimal(21,9) not null default 0, ADD COLUMN `sgst_amount` decimal(21,9) not null default 0, ADD COLUMN `cess_amount` decimal(21,9) not null default 0, ADD COLUMN `cess_non_advol_amount` decimal(21,9) not null default 0
+2024-01-24 17:17:36,864 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSales Order Item` MODIFY `blanket_order_rate` decimal(21,9) not null default 0, MODIFY `stock_uom_rate` decimal(21,9) not null default 0, MODIFY `base_price_list_rate` decimal(21,9) not null default 0, MODIFY `gross_profit` decimal(21,9) not null default 0, MODIFY `base_net_amount` decimal(21,9) not null default 0, MODIFY `base_rate` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0, MODIFY `net_amount` decimal(21,9) not null default 0, MODIFY `stock_qty` decimal(21,9) not null default 0, MODIFY `rate_with_margin` decimal(21,9) not null default 0, MODIFY `weight_per_unit` decimal(21,9) not null default 0, MODIFY `ordered_qty` decimal(21,9) not null default 0, MODIFY `base_amount` decimal(21,9) not null default 0, MODIFY `total_weight` decimal(21,9) not null default 0, MODIFY `actual_qty` decimal(21,9) not null default 0, MODIFY `base_rate_with_margin` decimal(21,9) not null default 0, MODIFY `billed_amt` decimal(21,9) not null default 0, MODIFY `projected_qty` decimal(21,9) not null default 0, MODIFY `discount_percentage` decimal(21,9) not null default 0, MODIFY `discount_amount` decimal(21,9) not null default 0, MODIFY `planned_qty` decimal(21,9) not null default 0, MODIFY `production_plan_qty` decimal(21,9) not null default 0, MODIFY `picked_qty` decimal(21,9) not null default 0, MODIFY `base_net_rate` decimal(21,9) not null default 0, MODIFY `produced_qty` decimal(21,9) not null default 0, MODIFY `margin_rate_or_amount` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0, MODIFY `delivered_qty` decimal(21,9) not null default 0, MODIFY `price_list_rate` decimal(21,9) not null default 0, MODIFY `net_rate` decimal(21,9) not null default 0, MODIFY `work_order_qty` decimal(21,9) not null default 0, MODIFY `returned_qty` decimal(21,9) not null default 0, MODIFY `valuation_rate` decimal(21,9) not null default 0, MODIFY `conversion_factor` decimal(21,9) not null default 0
+2024-01-24 17:17:36,892 WARNING database DDL Query made to DB:
+ALTER TABLE `tabItem` ADD COLUMN `gst_hsn_code` varchar(140), ADD COLUMN `is_ineligible_for_itc` int(1) not null default 0
+2024-01-24 17:17:36,896 WARNING database DDL Query made to DB:
+ALTER TABLE `tabItem` MODIFY `over_delivery_receipt_allowance` decimal(21,9) not null default 0, MODIFY `standard_rate` decimal(21,9) not null default 0, MODIFY `total_projected_qty` decimal(21,9) not null default 0, MODIFY `weight_per_unit` decimal(21,9) not null default 0, MODIFY `opening_stock` decimal(21,9) not null default 0, MODIFY `safety_stock` decimal(21,9) not null default 0, MODIFY `last_purchase_rate` decimal(21,9) not null default 0, MODIFY `max_discount` decimal(21,9) not null default 0, MODIFY `valuation_rate` decimal(21,9) not null default 0, MODIFY `over_billing_allowance` decimal(21,9) not null default 0
+2024-01-24 17:17:36,919 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` ADD COLUMN `gstin` varchar(140), ADD COLUMN `gst_category` varchar(140) default 'Unregistered'
+2024-01-24 17:17:36,922 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCustomer` MODIFY `default_commission_rate` decimal(21,9) not null default 0
+2024-01-24 17:17:36,963 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSales Invoice` ADD COLUMN `irn` varchar(140), ADD COLUMN `ewaybill` varchar(140), ADD COLUMN `e_waybill_status` varchar(140), ADD COLUMN `reason_for_issuing_document` varchar(45), ADD COLUMN `is_reverse_charge` int(1) not null default 0, ADD COLUMN `is_export_with_gst` int(1) not null default 0, ADD COLUMN `billing_address_gstin` varchar(15), ADD COLUMN `gst_category` varchar(140), ADD COLUMN `place_of_supply` varchar(50), ADD COLUMN `port_address` varchar(140), ADD COLUMN `company_gstin` varchar(15), ADD COLUMN `invoice_copy` varchar(30), ADD COLUMN `transporter` varchar(140), ADD COLUMN `gst_transporter_id` varchar(140), ADD COLUMN `driver` varchar(140), ADD COLUMN `lr_no` varchar(30), ADD COLUMN `vehicle_no` varchar(15), ADD COLUMN `distance` int(11) not null default 0, ADD COLUMN `transporter_name` text, ADD COLUMN `mode_of_transport` varchar(140) default 'Road', ADD COLUMN `driver_name` text, ADD COLUMN `lr_date` date, ADD COLUMN `gst_vehicle_type` varchar(140) default 'Regular', ADD COLUMN `ecommerce_gstin` varchar(15), ADD COLUMN `port_code` varchar(15), ADD COLUMN `shipping_bill_number` varchar(50), ADD COLUMN `shipping_bill_date` date, ADD COLUMN `einvoice_status` varchar(140)
+2024-01-24 17:17:36,967 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSales Invoice` MODIFY `rounding_adjustment` decimal(21,9) not null default 0, MODIFY `commission_rate` decimal(21,9) not null default 0, MODIFY `total` decimal(21,9) not null default 0, MODIFY `rounded_total` decimal(21,9) not null default 0, MODIFY `base_discount_amount` decimal(21,9) not null default 0, MODIFY `additional_discount_percentage` decimal(21,9) not null default 0, MODIFY `discount_amount` decimal(21,9) not null default 0, MODIFY `amount_eligible_for_commission` decimal(21,9) not null default 0, MODIFY `change_amount` decimal(21,9) not null default 0, MODIFY `plc_conversion_rate` decimal(21,9) not null default 0, MODIFY `base_rounding_adjustment` decimal(21,9) not null default 0, MODIFY `base_rounded_total` decimal(21,9) not null default 0, MODIFY `total_qty` decimal(21,9) not null default 0, MODIFY `net_total` decimal(21,9) not null default 0, MODIFY `base_total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `base_change_amount` decimal(21,9) not null default 0, MODIFY `base_paid_amount` decimal(21,9) not null default 0, MODIFY `total_net_weight` decimal(21,9) not null default 0, MODIFY `total_billing_hours` decimal(21,9) not null default 0, MODIFY `paid_amount` decimal(21,9) not null default 0, MODIFY `write_off_amount` decimal(21,9) not null default 0, MODIFY `base_grand_total` decimal(21,9) not null default 0, MODIFY `total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `total_commission` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `outstanding_amount` decimal(21,9) not null default 0, MODIFY `loyalty_amount` decimal(21,9) not null default 0, MODIFY `base_net_total` decimal(21,9) not null default 0, MODIFY `grand_total` decimal(21,9) not null default 0, MODIFY `total_advance` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `base_write_off_amount` decimal(21,9) not null default 0
+2024-01-24 17:17:36,993 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPayment Entry` ADD COLUMN `company_address` varchar(140), ADD COLUMN `company_gstin` varchar(140), ADD COLUMN `place_of_supply` varchar(140), ADD COLUMN `customer_address` varchar(140), ADD COLUMN `billing_address_gstin` varchar(140), ADD COLUMN `gst_category` varchar(140)
+2024-01-24 17:17:36,997 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPayment Entry` MODIFY `target_exchange_rate` decimal(21,9) not null default 0, MODIFY `paid_to_account_balance` decimal(21,9) not null default 0, MODIFY `base_total_allocated_amount` decimal(21,9) not null default 0, MODIFY `base_paid_amount_after_tax` decimal(21,9) not null default 0, MODIFY `source_exchange_rate` decimal(21,9) not null default 0, MODIFY `base_received_amount` decimal(21,9) not null default 0, MODIFY `received_amount` decimal(21,9) not null default 0, MODIFY `party_balance` decimal(21,9) not null default 0, MODIFY `difference_amount` decimal(21,9) not null default 0, MODIFY `base_paid_amount` decimal(21,9) not null default 0, MODIFY `paid_from_account_balance` decimal(21,9) not null default 0, MODIFY `base_received_amount_after_tax` decimal(21,9) not null default 0, MODIFY `total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `unallocated_amount` decimal(21,9) not null default 0, MODIFY `paid_amount` decimal(21,9) not null default 0, MODIFY `paid_amount_after_tax` decimal(21,9) not null default 0, MODIFY `total_allocated_amount` decimal(21,9) not null default 0, MODIFY `base_total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `received_amount_after_tax` decimal(21,9) not null default 0
+2024-01-24 17:17:37,019 WARNING database DDL Query made to DB:
+ALTER TABLE `tabJournal Entry` ADD COLUMN `ineligibility_reason` varchar(140), ADD COLUMN `company_gstin` varchar(140)
+2024-01-24 17:17:37,023 WARNING database DDL Query made to DB:
+ALTER TABLE `tabJournal Entry` MODIFY `total_amount` decimal(21,9) not null default 0, MODIFY `total_debit` decimal(21,9) not null default 0, MODIFY `total_credit` decimal(21,9) not null default 0, MODIFY `write_off_amount` decimal(21,9) not null default 0, MODIFY `difference` decimal(21,9) not null default 0
+2024-01-24 17:17:37,044 WARNING database DDL Query made to DB:
+ALTER TABLE `tabGL Entry` ADD COLUMN `company_gstin` varchar(140)
+2024-01-24 17:17:37,048 WARNING database DDL Query made to DB:
+ALTER TABLE `tabGL Entry` MODIFY `debit_in_transaction_currency` decimal(21,9) not null default 0, MODIFY `credit_in_transaction_currency` decimal(21,9) not null default 0, MODIFY `credit_in_account_currency` decimal(21,9) not null default 0, MODIFY `credit` decimal(21,9) not null default 0, MODIFY `debit` decimal(21,9) not null default 0, MODIFY `debit_in_account_currency` decimal(21,9) not null default 0, MODIFY `transaction_exchange_rate` decimal(21,9) not null default 0
+2024-01-24 17:17:37,077 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPurchase Invoice Item` ADD COLUMN `gst_hsn_code` varchar(140), ADD COLUMN `is_ineligible_for_itc` int(1) not null default 0, ADD COLUMN `gst_treatment` varchar(140), ADD COLUMN `taxable_value` decimal(21,9) not null default 0, ADD COLUMN `igst_rate` decimal(21,9) not null default 0, ADD COLUMN `cgst_rate` decimal(21,9) not null default 0, ADD COLUMN `sgst_rate` decimal(21,9) not null default 0, ADD COLUMN `cess_rate` decimal(21,9) not null default 0, ADD COLUMN `cess_non_advol_rate` decimal(21,9) not null default 0, ADD COLUMN `igst_amount` decimal(21,9) not null default 0, ADD COLUMN `cgst_amount` decimal(21,9) not null default 0, ADD COLUMN `sgst_amount` decimal(21,9) not null default 0, ADD COLUMN `cess_amount` decimal(21,9) not null default 0, ADD COLUMN `cess_non_advol_amount` decimal(21,9) not null default 0
+2024-01-24 17:17:37,081 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPurchase Invoice Item` MODIFY `rejected_qty` decimal(21,9) not null default 0, MODIFY `discount_percentage` decimal(21,9) not null default 0, MODIFY `base_net_rate` decimal(21,9) not null default 0, MODIFY `price_list_rate` decimal(21,9) not null default 0, MODIFY `received_qty` decimal(21,9) not null default 0, MODIFY `weight_per_unit` decimal(21,9) not null default 0, MODIFY `base_price_list_rate` decimal(21,9) not null default 0, MODIFY `stock_uom_rate` decimal(21,9) not null default 0, MODIFY `stock_qty` decimal(21,9) not null default 0, MODIFY `item_tax_amount` decimal(21,9) not null default 0, MODIFY `net_rate` decimal(21,9) not null default 0, MODIFY `base_net_amount` decimal(21,9) not null default 0, MODIFY `landed_cost_voucher_amount` decimal(21,9) not null default 0, MODIFY `total_weight` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0, MODIFY `base_amount` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0, MODIFY `margin_rate_or_amount` decimal(21,9) not null default 0, MODIFY `discount_amount` decimal(21,9) not null default 0, MODIFY `valuation_rate` decimal(21,9) not null default 0, MODIFY `rate_with_margin` decimal(21,9) not null default 0, MODIFY `base_rate_with_margin` decimal(21,9) not null default 0, MODIFY `net_amount` decimal(21,9) not null default 0, MODIFY `rm_supp_cost` decimal(21,9) not null default 0, MODIFY `base_rate` decimal(21,9) not null default 0
+2024-01-24 17:17:37,112 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSales Order` ADD COLUMN `is_reverse_charge` int(1) not null default 0, ADD COLUMN `is_export_with_gst` int(1) not null default 0, ADD COLUMN `billing_address_gstin` varchar(15), ADD COLUMN `gst_category` varchar(140), ADD COLUMN `place_of_supply` varchar(50), ADD COLUMN `company_gstin` varchar(15), ADD COLUMN `ecommerce_gstin` varchar(15)
+2024-01-24 17:17:37,116 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSales Order` MODIFY `per_delivered` decimal(21,9) not null default 0, MODIFY `loyalty_amount` decimal(21,9) not null default 0, MODIFY `base_net_total` decimal(21,9) not null default 0, MODIFY `per_billed` decimal(21,9) not null default 0, MODIFY `base_grand_total` decimal(21,9) not null default 0, MODIFY `rounded_total` decimal(21,9) not null default 0, MODIFY `base_rounding_adjustment` decimal(21,9) not null default 0, MODIFY `grand_total` decimal(21,9) not null default 0, MODIFY `advance_paid` decimal(21,9) not null default 0, MODIFY `per_picked` decimal(21,9) not null default 0, MODIFY `base_discount_amount` decimal(21,9) not null default 0, MODIFY `plc_conversion_rate` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `amount_eligible_for_commission` decimal(21,9) not null default 0, MODIFY `total` decimal(21,9) not null default 0, MODIFY `commission_rate` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `total_qty` decimal(21,9) not null default 0, MODIFY `total_commission` decimal(21,9) not null default 0, MODIFY `base_rounded_total` decimal(21,9) not null default 0, MODIFY `additional_discount_percentage` decimal(21,9) not null default 0, MODIFY `total_net_weight` decimal(21,9) not null default 0, MODIFY `discount_amount` decimal(21,9) not null default 0, MODIFY `base_total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `rounding_adjustment` decimal(21,9) not null default 0, MODIFY `net_total` decimal(21,9) not null default 0, MODIFY `total_taxes_and_charges` decimal(21,9) not null default 0
+2024-01-24 17:17:37,155 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPurchase Invoice` ADD COLUMN `ewaybill` varchar(140), ADD COLUMN `is_reverse_charge` int(1) not null default 0, ADD COLUMN `supplier_gstin` varchar(140), ADD COLUMN `gst_category` varchar(140), ADD COLUMN `company_gstin` varchar(140), ADD COLUMN `place_of_supply` varchar(140), ADD COLUMN `transporter` varchar(140), ADD COLUMN `gst_transporter_id` varchar(140), ADD COLUMN `driver` varchar(140), ADD COLUMN `lr_no` varchar(30), ADD COLUMN `vehicle_no` varchar(15), ADD COLUMN `distance` int(11) not null default 0, ADD COLUMN `transporter_name` text, ADD COLUMN `mode_of_transport` varchar(140) default 'Road', ADD COLUMN `driver_name` text, ADD COLUMN `lr_date` date, ADD COLUMN `gst_vehicle_type` varchar(140) default 'Regular', ADD COLUMN `itc_classification` varchar(140) default 'All Other ITC', ADD COLUMN `ineligibility_reason` varchar(140), ADD COLUMN `reconciliation_status` varchar(140), ADD COLUMN `itc_integrated_tax` decimal(21,9) not null default 0, ADD COLUMN `itc_central_tax` decimal(21,9) not null default 0, ADD COLUMN `itc_state_tax` decimal(21,9) not null default 0, ADD COLUMN `itc_cess_amount` decimal(21,9) not null default 0
+2024-01-24 17:17:37,159 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPurchase Invoice` MODIFY `discount_amount` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `base_taxes_and_charges_deducted` decimal(21,9) not null default 0, MODIFY `total_net_weight` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `rounding_adjustment` decimal(21,9) not null default 0, MODIFY `base_grand_total` decimal(21,9) not null default 0, MODIFY `base_taxes_and_charges_added` decimal(21,9) not null default 0, MODIFY `paid_amount` decimal(21,9) not null default 0, MODIFY `base_write_off_amount` decimal(21,9) not null default 0, MODIFY `base_net_total` decimal(21,9) not null default 0, MODIFY `rounded_total` decimal(21,9) not null default 0, MODIFY `base_rounding_adjustment` decimal(21,9) not null default 0, MODIFY `net_total` decimal(21,9) not null default 0, MODIFY `write_off_amount` decimal(21,9) not null default 0, MODIFY `total` decimal(21,9) not null default 0, MODIFY `per_received` decimal(21,9) not null default 0, MODIFY `base_total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `plc_conversion_rate` decimal(21,9) not null default 0, MODIFY `base_tax_withholding_net_total` decimal(21,9) not null default 0, MODIFY `additional_discount_percentage` decimal(21,9) not null default 0, MODIFY `taxes_and_charges_deducted` decimal(21,9) not null default 0, MODIFY `taxes_and_charges_added` decimal(21,9) not null default 0, MODIFY `total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `base_discount_amount` decimal(21,9) not null default 0, MODIFY `total_advance` decimal(21,9) not null default 0, MODIFY `outstanding_amount` decimal(21,9) not null default 0, MODIFY `base_rounded_total` decimal(21,9) not null default 0, MODIFY `grand_total` decimal(21,9) not null default 0, MODIFY `base_paid_amount` decimal(21,9) not null default 0, MODIFY `total_qty` decimal(21,9) not null default 0
+2024-01-24 17:17:37,193 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPurchase Receipt` ADD COLUMN `ewaybill` varchar(140), ADD COLUMN `supplier_gstin` varchar(140), ADD COLUMN `gst_category` varchar(140), ADD COLUMN `company_gstin` varchar(140), ADD COLUMN `place_of_supply` varchar(140), ADD COLUMN `transporter` varchar(140), ADD COLUMN `gst_transporter_id` varchar(140), ADD COLUMN `vehicle_no` varchar(15), ADD COLUMN `distance` int(11) not null default 0, ADD COLUMN `mode_of_transport` varchar(140) default 'Road', ADD COLUMN `driver` varchar(140), ADD COLUMN `driver_name` text, ADD COLUMN `gst_vehicle_type` varchar(140) default 'Regular', ADD COLUMN `is_reverse_charge` int(1) not null default 0
+2024-01-24 17:17:37,198 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPurchase Receipt` MODIFY `plc_conversion_rate` decimal(21,9) not null default 0, MODIFY `grand_total` decimal(21,9) not null default 0, MODIFY `total_qty` decimal(21,9) not null default 0, MODIFY `net_total` decimal(21,9) not null default 0, MODIFY `base_discount_amount` decimal(21,9) not null default 0, MODIFY `additional_discount_percentage` decimal(21,9) not null default 0, MODIFY `per_billed` decimal(21,9) not null default 0, MODIFY `base_taxes_and_charges_deducted` decimal(21,9) not null default 0, MODIFY `rounding_adjustment` decimal(21,9) not null default 0, MODIFY `total_net_weight` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `discount_amount` decimal(21,9) not null default 0, MODIFY `taxes_and_charges_added` decimal(21,9) not null default 0, MODIFY `base_rounding_adjustment` decimal(21,9) not null default 0, MODIFY `base_net_total` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `base_taxes_and_charges_added` decimal(21,9) not null default 0, MODIFY `rounded_total` decimal(21,9) not null default 0, MODIFY `per_returned` decimal(21,9) not null default 0, MODIFY `base_rounded_total` decimal(21,9) not null default 0, MODIFY `taxes_and_charges_deducted` decimal(21,9) not null default 0, MODIFY `total` decimal(21,9) not null default 0, MODIFY `base_grand_total` decimal(21,9) not null default 0, MODIFY `total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `base_total_taxes_and_charges` decimal(21,9) not null default 0
+2024-01-24 17:17:37,234 WARNING database DDL Query made to DB:
+ALTER TABLE `tabDelivery Note` ADD COLUMN `ewaybill` varchar(140), ADD COLUMN `is_reverse_charge` int(1) not null default 0, ADD COLUMN `is_export_with_gst` int(1) not null default 0, ADD COLUMN `billing_address_gstin` varchar(15), ADD COLUMN `gst_category` varchar(140), ADD COLUMN `place_of_supply` varchar(50), ADD COLUMN `company_gstin` varchar(15), ADD COLUMN `gst_transporter_id` varchar(140), ADD COLUMN `distance` int(11) not null default 0, ADD COLUMN `mode_of_transport` varchar(140) default 'Road', ADD COLUMN `gst_vehicle_type` varchar(140) default 'Regular', ADD COLUMN `ecommerce_gstin` varchar(15), ADD COLUMN `port_code` varchar(15), ADD COLUMN `shipping_bill_number` varchar(50), ADD COLUMN `shipping_bill_date` date
+2024-01-24 17:17:37,239 WARNING database DDL Query made to DB:
+ALTER TABLE `tabDelivery Note` MODIFY `total_net_weight` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `base_rounding_adjustment` decimal(21,9) not null default 0, MODIFY `base_net_total` decimal(21,9) not null default 0, MODIFY `total` decimal(21,9) not null default 0, MODIFY `per_billed` decimal(21,9) not null default 0, MODIFY `discount_amount` decimal(21,9) not null default 0, MODIFY `net_total` decimal(21,9) not null default 0, MODIFY `grand_total` decimal(21,9) not null default 0, MODIFY `per_installed` decimal(21,9) not null default 0, MODIFY `rounding_adjustment` decimal(21,9) not null default 0, MODIFY `commission_rate` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `base_discount_amount` decimal(21,9) not null default 0, MODIFY `amount_eligible_for_commission` decimal(21,9) not null default 0, MODIFY `additional_discount_percentage` decimal(21,9) not null default 0, MODIFY `total_qty` decimal(21,9) not null default 0, MODIFY `per_returned` decimal(21,9) not null default 0, MODIFY `base_total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `base_rounded_total` decimal(21,9) not null default 0, MODIFY `plc_conversion_rate` decimal(21,9) not null default 0, MODIFY `rounded_total` decimal(21,9) not null default 0, MODIFY `total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `base_grand_total` decimal(21,9) not null default 0, MODIFY `total_commission` decimal(21,9) not null default 0
+2024-01-24 17:17:37,261 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSupplier` ADD COLUMN `gstin` varchar(140), ADD COLUMN `gst_category` varchar(140) default 'Unregistered', ADD COLUMN `gst_transporter_id` varchar(140), ADD COLUMN `is_reverse_charge_applicable` int(1) not null default 0
+2024-01-24 17:17:37,289 WARNING database DDL Query made to DB:
+ALTER TABLE `tabQuotation` ADD COLUMN `is_reverse_charge` int(1) not null default 0, ADD COLUMN `is_export_with_gst` int(1) not null default 0, ADD COLUMN `billing_address_gstin` varchar(15), ADD COLUMN `gst_category` varchar(140), ADD COLUMN `place_of_supply` varchar(50), ADD COLUMN `company_gstin` varchar(15)
+2024-01-24 17:17:37,293 WARNING database DDL Query made to DB:
+ALTER TABLE `tabQuotation` MODIFY `net_total` decimal(21,9) not null default 0, MODIFY `total` decimal(21,9) not null default 0, MODIFY `additional_discount_percentage` decimal(21,9) not null default 0, MODIFY `base_discount_amount` decimal(21,9) not null default 0, MODIFY `total_qty` decimal(21,9) not null default 0, MODIFY `base_rounding_adjustment` decimal(21,9) not null default 0, MODIFY `discount_amount` decimal(21,9) not null default 0, MODIFY `base_net_total` decimal(21,9) not null default 0, MODIFY `base_total` decimal(21,9) not null default 0, MODIFY `base_total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `base_rounded_total` decimal(21,9) not null default 0, MODIFY `total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `total_net_weight` decimal(21,9) not null default 0, MODIFY `base_grand_total` decimal(21,9) not null default 0, MODIFY `conversion_rate` decimal(21,9) not null default 0, MODIFY `rounding_adjustment` decimal(21,9) not null default 0, MODIFY `grand_total` decimal(21,9) not null default 0, MODIFY `plc_conversion_rate` decimal(21,9) not null default 0, MODIFY `rounded_total` decimal(21,9) not null default 0
+2024-01-24 17:17:37,311 WARNING database DDL Query made to DB:
+ALTER TABLE `tabItem Tax Template` ADD COLUMN `gst_treatment` varchar(140) default 'Taxable', ADD COLUMN `gst_rate` decimal(21,9) not null default 0
+2024-01-24 17:17:37,341 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSales Invoice Item` ADD COLUMN `gst_hsn_code` varchar(140), ADD COLUMN `gst_treatment` varchar(140), ADD COLUMN `taxable_value` decimal(21,9) not null default 0, ADD COLUMN `igst_rate` decimal(21,9) not null default 0, ADD COLUMN `cgst_rate` decimal(21,9) not null default 0, ADD COLUMN `sgst_rate` decimal(21,9) not null default 0, ADD COLUMN `cess_rate` decimal(21,9) not null default 0, ADD COLUMN `cess_non_advol_rate` decimal(21,9) not null default 0, ADD COLUMN `igst_amount` decimal(21,9) not null default 0, ADD COLUMN `cgst_amount` decimal(21,9) not null default 0, ADD COLUMN `sgst_amount` decimal(21,9) not null default 0, ADD COLUMN `cess_amount` decimal(21,9) not null default 0, ADD COLUMN `cess_non_advol_amount` decimal(21,9) not null default 0
+2024-01-24 17:17:37,345 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSales Invoice Item` MODIFY `base_price_list_rate` decimal(21,9) not null default 0, MODIFY `rate_with_margin` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0, MODIFY `base_net_rate` decimal(21,9) not null default 0, MODIFY `margin_rate_or_amount` decimal(21,9) not null default 0, MODIFY `stock_qty` decimal(21,9) not null default 0, MODIFY `discount_percentage` decimal(21,9) not null default 0, MODIFY `stock_uom_rate` decimal(21,9) not null default 0, MODIFY `discount_amount` decimal(21,9) not null default 0, MODIFY `price_list_rate` decimal(21,9) not null default 0, MODIFY `base_rate` decimal(21,9) not null default 0, MODIFY `base_amount` decimal(21,9) not null default 0, MODIFY `incoming_rate` decimal(21,9) not null default 0, MODIFY `weight_per_unit` decimal(21,9) not null default 0, MODIFY `actual_batch_qty` decimal(21,9) not null default 0, MODIFY `conversion_factor` decimal(21,9) not null default 0, MODIFY `net_rate` decimal(21,9) not null default 0, MODIFY `base_rate_with_margin` decimal(21,9) not null default 0, MODIFY `delivered_qty` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0, MODIFY `net_amount` decimal(21,9) not null default 0, MODIFY `actual_qty` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0, MODIFY `base_net_amount` decimal(21,9) not null default 0, MODIFY `total_weight` decimal(21,9) not null default 0
+2024-01-24 17:17:37,369 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaterial Request Item` ADD COLUMN `gst_hsn_code` varchar(140)
+2024-01-24 17:17:37,373 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaterial Request Item` MODIFY `min_order_qty` decimal(21,9) not null default 0, MODIFY `conversion_factor` decimal(21,9) not null default 0, MODIFY `rate` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0, MODIFY `actual_qty` decimal(21,9) not null default 0, MODIFY `stock_qty` decimal(21,9) not null default 0, MODIFY `qty` decimal(21,9) not null default 0, MODIFY `received_qty` decimal(21,9) not null default 0, MODIFY `ordered_qty` decimal(21,9) not null default 0, MODIFY `projected_qty` decimal(21,9) not null default 0
+2024-01-24 17:17:37,398 WARNING database DDL Query made to DB:
+ALTER TABLE `tabExpense Claim` ADD COLUMN `company_gstin` varchar(140)
+2024-01-24 17:17:37,402 WARNING database DDL Query made to DB:
+ALTER TABLE `tabExpense Claim` MODIFY `total_taxes_and_charges` decimal(21,9) not null default 0, MODIFY `total_amount_reimbursed` decimal(21,9) not null default 0, MODIFY `grand_total` decimal(21,9) not null default 0, MODIFY `total_advance_amount` decimal(21,9) not null default 0, MODIFY `total_claimed_amount` decimal(21,9) not null default 0, MODIFY `total_sanctioned_amount` decimal(21,9) not null default 0
+2024-01-24 18:58:14,133 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2024-01-24 18:58:14,645 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2024-01-24 19:19:10,129 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2024-01-24 19:19:10,647 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2024-01-25 16:21:59,964 WARNING database DDL Query made to DB:
+create table `tabEmployee Salary Details` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`date` date,
+`station` varchar(140),
+`org_name` varchar(140),
+`emp_name` varchar(140),
+`emp_designation` varchar(140),
+`total_credits` int(11) not null default 0,
+`account_holder` varchar(140),
+`account_number` varchar(140),
+`ifsc_code` varchar(140),
+`branch` varchar(140),
+`cto_sign` varchar(140),
+`ceo_sign` varchar(140),
+`emp_sign` varchar(140),
+`stamp` varchar(140),
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-25 16:22:00,015 WARNING database DDL Query made to DB:
+create table `tabHilltop` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`fname` varchar(140),
+`lname` varchar(140),
+`fullname` varchar(140),
+`integer` int(11) not null default 0,
+`add_date` date,
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-25 16:22:00,073 WARNING database DDL Query made to DB:
+create table `tabtest_link` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`full_name` varchar(140),
+`marks` int(11) not null default 0,
+`test` varchar(140),
+`grade` varchar(140),
+`branch` varchar(140),
+`result` varchar(140),
+`photo` text,
+`amended_from` varchar(140),
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index `amended_from`(`amended_from`),
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-25 16:22:00,116 WARNING database DDL Query made to DB:
+create table `tabtest` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`fname` varchar(140),
+`lname` varchar(140),
+`age` int(11) not null default 0,
+`branch` varchar(140),
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-25 16:22:00,204 WARNING database DDL Query made to DB:
+create table `tabSales Order For Jinja` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`head` varchar(140),
+`address` varchar(140),
+`gstin` varchar(140),
+`state` varchar(140),
+`code` int(11) not null default 0,
+`cin` varchar(140),
+`mail` varchar(140),
+`ship_to` varchar(140),
+`address_consignee` varchar(140),
+`gstin_consignee` varchar(140),
+`state_consignee` varchar(140),
+`code_consignee` int(11) not null default 0,
+`buyer` varchar(140),
+`address_buyer` varchar(140),
+`gstin_buyer` varchar(140),
+`state_buyer` varchar(140),
+`code_buyer` int(11) not null default 0,
+`voucher` int(11) not null default 0,
+`order_no` int(11) not null default 0,
+`dispatched_through` varchar(140),
+`dated` date,
+`payment_mode` varchar(140),
+`others` varchar(140),
+`destination` varchar(140),
+`terms_of_delivery` varchar(140),
+`amount_words` varchar(140),
+`company_pan` varchar(140),
+`sl` int(11) not null default 0,
+`description_of_goods` varchar(140),
+`hsn` int(11) not null default 0,
+`qty` decimal(21,9) not null default 0,
+`rate` decimal(21,9) not null default 0,
+`per` varchar(140),
+`igst` decimal(21,9) not null default 0,
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-25 16:56:06,891 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2024-01-25 16:56:07,444 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2024-01-25 17:22:41,149 WARNING database DDL Query made to DB:
+create table `tabHill Top` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-25 17:23:16,753 WARNING database DDL Query made to DB:
+create table `tabHilltop Custom` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-01-25 17:25:19,665 WARNING database DDL Query made to DB:
+ALTER TABLE `tabHilltop Custom` ADD COLUMN `custom_no` int(11) not null default 0, ADD COLUMN `fname` varchar(140), ADD COLUMN `address` varchar(140), ADD COLUMN `phoneno` int(11) not null default 0
+2024-01-25 17:27:00,716 WARNING database DDL Query made to DB:
+DROP TABLE IF EXISTS `tabHill Top`

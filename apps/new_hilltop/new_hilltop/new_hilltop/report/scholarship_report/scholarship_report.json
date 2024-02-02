@@ -1,0 +1,79 @@
+{
+ "add_total_row": 0,
+ "columns": [
+  {
+   "fieldname": "student_name",
+   "fieldtype": "Data",
+   "label": "Student Name",
+   "width": 0
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Select",
+   "label": "Branch",
+   "width": 300
+  },
+  {
+   "fieldname": "academic_year",
+   "fieldtype": "Select",
+   "label": "Academic Year",
+   "width": 0
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "width": 0
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address",
+   "width": 0
+  }
+ ],
+ "creation": "2024-01-12 15:16:46.541238",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "branch",
+   "fieldtype": "Select",
+   "label": "Branch",
+   "mandatory": 0,
+   "options": "Computer Science & Engineering\nElectronics & Communications Engineering\nCivil Engineering\nMechanical Engineering\nChemical Engineering\nMetallurgical Engineering\nAeronautical Engineering\nOthers",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "mandatory": 0,
+   "options": "Male\nFemale",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "student_name",
+   "fieldtype": "Data",
+   "label": "Student Name",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "Scholarship letter head",
+ "letterhead": null,
+ "modified": "2024-01-12 16:29:26.548616",
+ "modified_by": "Administrator",
+ "module": "New Hilltop",
+ "name": "Scholarship report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "select student_name,branch,academic_year,gender,address from `tabScholarship`\nwhere (gender = %(gender)s and branch = %(branch)s) and student_name =%(student_name)s",
+ "ref_doctype": "Scholarship",
+ "report_name": "Scholarship report",
+ "report_type": "Query Report",
+ "roles": []
+}

@@ -1,0 +1,37 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-01-22 10:50:05.405302",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_xjg1",
+  "vehicle_make"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_xjg1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "vehicle_make",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vehicle make",
+   "options": "Vehicle Make"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-01-22 11:05:15.563589",
+ "modified_by": "Administrator",
+ "module": "New Hilltop",
+ "name": "Make Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

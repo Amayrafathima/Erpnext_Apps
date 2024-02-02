@@ -1,0 +1,46 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-01-29 12:57:26.147929",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_qen9",
+  "fullanme"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_qen9",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "fullanme",
+   "fieldtype": "Data",
+   "label": "fullanme"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-29 12:57:39.644069",
+ "modified_by": "Administrator",
+ "module": "Hilltop",
+ "name": "Testing",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,111 @@
+{
+ "actions": [],
+ "autoname": "format:GSTR3B-{month}-{year}-{company_address}",
+ "creation": "2019-02-04 11:35:55.964639",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "company_address",
+  "year",
+  "month",
+  "column_break_jhew",
+  "enqueue_report",
+  "generation_status",
+  "section_break_yqh7",
+  "json_output",
+  "missing_field_invoices"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "company_address",
+   "fieldtype": "Link",
+   "label": "Company Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "year",
+   "fieldtype": "Select",
+   "label": "Year"
+  },
+  {
+   "fieldname": "month",
+   "fieldtype": "Select",
+   "label": "Month",
+   "options": "January\nFebruary\nMarch\nApril\nMay\nJune\nJuly\nAugust\nSeptember\nOctober\nNovember\nDecember"
+  },
+  {
+   "fieldname": "json_output",
+   "fieldtype": "Code",
+   "label": "JSON Output"
+  },
+  {
+   "fieldname": "missing_field_invoices",
+   "fieldtype": "Small Text",
+   "label": "Invoices with no Place Of Supply",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_jhew",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "description": "Generate report in the background.",
+   "fieldname": "enqueue_report",
+   "fieldtype": "Check",
+   "label": "Enqueue Report",
+   "print_hide": 1,
+   "report_hide": 1
+  },
+  {
+   "fieldname": "section_break_yqh7",
+   "fieldtype": "Section Break",
+   "hide_border": 1
+  },
+  {
+   "fieldname": "generation_status",
+   "fieldtype": "Data",
+   "label": "Status",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "modified": "2024-01-02 14:09:31.230340",
+ "modified_by": "Administrator",
+ "module": "GST India",
+ "name": "GSTR 3B Report",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Accounts Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Accounts User",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

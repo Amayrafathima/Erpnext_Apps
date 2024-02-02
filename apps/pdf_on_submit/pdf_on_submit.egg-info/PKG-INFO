@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: pdf_on_submit
+Version: 15.0.0
+Summary: Print to PDF on submit of a doctype
+Author: ALYF GmbH
+Author-email: hallo@alyf.de
+License-File: LICENCE

@@ -1,0 +1,65 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2024-01-11 17:48:05.908868",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "branch",
+   "fieldtype": "Select",
+   "label": "Branch",
+   "mandatory": 0,
+   "options": "Computer Science & Engineering\nElectronics & Communications Engineering\nCivil Engineering\nMechanical Engineering\nChemical Engineering\nMetallurgical Engineering\nAeronautical Engineering\nOthers",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "mandatory": 0,
+   "options": "Male\nFemale",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "scholarshipfinancial_aid_information_if_applicable",
+   "fieldtype": "Check",
+   "label": "Scholarship/Financial Aid Information (if applicable)",
+   "mandatory": 0,
+   "options": "Yes\nNo",
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "Scholarship letter head",
+ "letterhead": null,
+ "modified": "2024-01-12 14:28:42.884403",
+ "modified_by": "Administrator",
+ "module": "New Hilltop",
+ "name": "Sales order report through query",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "select student_name,branch,academic_year,gender,scholarshipfinancial_aid_information_if_applicable from `tabScholarship`\nwhere (branch = %(branch)s and gender = %(gender)s) and scholarshipfinancial_aid_information_if_applicable = %(scholarshipfinancial_aid_information_if_applicable)s;",
+ "ref_doctype": "Scholarship",
+ "report_name": "Sales order report through query",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "Sales User"
+  },
+  {
+   "role": "Sales Manager"
+  },
+  {
+   "role": "Maintenance User"
+  },
+  {
+   "role": "Accounts User"
+  },
+  {
+   "role": "Stock User"
+  }
+ ]
+}

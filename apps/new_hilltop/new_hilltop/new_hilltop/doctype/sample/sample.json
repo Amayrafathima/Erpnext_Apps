@@ -1,0 +1,88 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-01-09 17:27:58.502598",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_izn2",
+  "student_list",
+  "description",
+  "student_id",
+  "gender",
+  "logo"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_izn2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "student_list",
+   "fieldtype": "Data",
+   "label": "Student List"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Link",
+   "label": "Document no.",
+   "options": "Scholarship"
+  },
+  {
+   "fetch_from": "description.student_name",
+   "fieldname": "student_id",
+   "fieldtype": "Data",
+   "label": "Student Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Gender",
+   "options": "Male\nFemale",
+   "reqd": 1
+  },
+  {
+   "fieldname": "logo",
+   "fieldtype": "Attach Image",
+   "hidden": 1,
+   "label": "logo"
+  }
+ ],
+ "image_field": "logo",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "max_attachments": 1,
+ "modified": "2024-01-10 11:18:29.130749",
+ "modified_by": "Administrator",
+ "module": "New Hilltop",
+ "name": "Sample",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Green",
+   "title": "Male"
+  },
+  {
+   "color": "Purple",
+   "title": "Female"
+  }
+ ]
+}

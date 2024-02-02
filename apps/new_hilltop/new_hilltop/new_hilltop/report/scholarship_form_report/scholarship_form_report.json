@@ -1,0 +1,27 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2024-01-06 15:16:21.872218",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "json": "{}",
+ "letterhead": null,
+ "modified": "2024-01-06 15:16:21.872218",
+ "modified_by": "Administrator",
+ "module": "New Hilltop",
+ "name": "Scholarship Form Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Scholarship Form",
+ "report_name": "Scholarship Form Report",
+ "report_type": "Report Builder",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}

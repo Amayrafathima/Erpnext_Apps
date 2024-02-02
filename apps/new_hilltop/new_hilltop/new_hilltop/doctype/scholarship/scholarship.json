@@ -1,0 +1,175 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "SO-.####",
+ "creation": "2024-01-06 12:25:26.229336",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_9czr",
+  "student_name",
+  "branch",
+  "academic_year",
+  "email",
+  "column_break_dpoh",
+  "date_of_birth",
+  "gender",
+  "marks_details",
+  "section_break_fwsc",
+  "name_of_parentguardian",
+  "relationship_to_student",
+  "contact_information_of_parentguardian",
+  "scholarshipfinancial_aid_information_if_applicable",
+  "column_break_mrfs",
+  "address"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_9czr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "student_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Student Name"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Branch",
+   "options": "\nComputer Science & Engineering\nElectronics & Communications Engineering\nCivil Engineering\nMechanical Engineering\nChemical Engineering\nMetallurgical Engineering\nAeronautical Engineering\nOthers"
+  },
+  {
+   "fieldname": "marks_details",
+   "fieldtype": "Table",
+   "label": "Enrolled Courses",
+   "options": "Enrolled Courses"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth",
+   "print_width": "50",
+   "width": "50"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "\nMale\nFemale",
+   "print_width": "60",
+   "width": "60"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Text",
+   "label": "Address "
+  },
+  {
+   "fieldname": "academic_year",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Academic Year",
+   "options": "1st Year\n2nd Year\n3rd Year\n4th year"
+  },
+  {
+   "fieldname": "name_of_parentguardian",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name of Parent/Guardian"
+  },
+  {
+   "fieldname": "contact_information_of_parentguardian",
+   "fieldtype": "Data",
+   "label": "Contact Information of Parent/Guardian"
+  },
+  {
+   "fieldname": "scholarshipfinancial_aid_information_if_applicable",
+   "fieldtype": "Select",
+   "label": "Scholarship/Financial Aid Information (if applicable)",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "section_break_fwsc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_mrfs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_dpoh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "relationship_to_student",
+   "fieldtype": "Data",
+   "label": "Relationship to Student"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-10 12:18:00.974678",
+ "modified_by": "Administrator",
+ "module": "New Hilltop",
+ "name": "Scholarship",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Red",
+   "title": "Mechanical Engineering"
+  },
+  {
+   "color": "Blue",
+   "title": "Chemical Engineering"
+  },
+  {
+   "color": "Orange",
+   "title": "Computer Science & Engineering"
+  },
+  {
+   "color": "Gray",
+   "title": "Electronics & Communications Engineering"
+  },
+  {
+   "color": "Green",
+   "title": "Civil Engineering"
+  },
+  {
+   "color": "Yellow",
+   "title": "Metallurgical Engineering"
+  },
+  {
+   "color": "Light Blue",
+   "title": "Aeronautical Engineering"
+  },
+  {
+   "color": "Purple",
+   "title": "Others"
+  }
+ ]
+}
